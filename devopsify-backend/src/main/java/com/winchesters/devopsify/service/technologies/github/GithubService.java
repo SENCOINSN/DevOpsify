@@ -1,9 +1,8 @@
 package com.winchesters.devopsify.service.technologies.github;
 
 import com.winchesters.devopsify.model.GithubCredentials;
+import jakarta.validation.constraints.NotNull;
 import org.kohsuke.github.GitHub;
-
-import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.List;
 

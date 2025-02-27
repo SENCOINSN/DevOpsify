@@ -4,6 +4,7 @@ import com.winchesters.devopsify.exception.UserCredentialsNotFoundException;
 import com.winchesters.devopsify.exception.github.PersonalAccessTokenPermissionException;
 import com.winchesters.devopsify.model.GithubCredentials;
 import com.winchesters.devopsify.service.UserService;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
@@ -13,8 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;

@@ -3,15 +3,17 @@ package com.winchesters.devopsify.model.entity;
 
 import com.winchesters.devopsify.model.GithubCredentials;
 import com.winchesters.devopsify.security.ApplicationUserRole;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class User {
 
     @NotNull(message = "Email must not be null")
     @Column(name = "email", unique = true)
-    @javax.validation.constraints.Email(message = "not an email")
+    @Email(message = "not an email")
     private String email;
 
     @NotNull(message = "password must not be null")
@@ -43,7 +45,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private ApplicationUserRole role;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private GithubCredentials githubCredentials;
 

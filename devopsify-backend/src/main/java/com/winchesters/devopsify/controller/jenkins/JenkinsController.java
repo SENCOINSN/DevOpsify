@@ -1,6 +1,7 @@
 package com.winchesters.devopsify.controller.jenkins;
 
 
+import com.winchesters.devopsify.constants.ApiPath;
 import com.winchesters.devopsify.exception.jenkins.JenkinsException;
 import com.winchesters.devopsify.model.entity.Server;
 import com.winchesters.devopsify.service.technologies.jenkins.JenkinsService;
@@ -8,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "api/v1/jenkins")
+@RequestMapping(path = ApiPath.BASE_PATH+ "/jenkins")
 @RequiredArgsConstructor
 public class JenkinsController {
 

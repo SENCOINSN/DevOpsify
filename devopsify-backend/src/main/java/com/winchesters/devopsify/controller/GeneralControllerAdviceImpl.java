@@ -2,6 +2,7 @@ package com.winchesters.devopsify.controller;
 
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.winchesters.devopsify.dto.error.ErrorResponseDto;
+import jakarta.validation.ValidationException;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.core.annotation.Order;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.validation.ValidationException;
+
 
 @Order()
 @RestControllerAdvice

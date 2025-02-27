@@ -1,6 +1,7 @@
 package com.winchesters.devopsify.controller.docker;
 
 
+import com.winchesters.devopsify.constants.ApiPath;
 import com.winchesters.devopsify.dto.request.BackendDockerfileDto;
 import com.winchesters.devopsify.dto.request.DataBaseDockerfileDto;
 import com.winchesters.devopsify.dto.response.DockerfileDefaultValuesDto;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping(path = "api/v1/docker")
+@RequestMapping(path = ApiPath.BASE_PATH + "/docker")
 @RequiredArgsConstructor
 public class DockerController {
 

@@ -3,9 +3,8 @@ package com.winchesters.devopsify.dto.request;
 
 import com.winchesters.devopsify.dto.request.project.CreateNewProjectGeneralDto;
 import com.winchesters.devopsify.dto.request.project.CreateNewProjectGithubDto;
+import jakarta.validation.constraints.NotNull;
 import org.kohsuke.github.GHRepository;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * name

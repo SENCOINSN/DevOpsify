@@ -1,5 +1,6 @@
 package com.winchesters.devopsify.controller.project;
 
+import com.winchesters.devopsify.constants.ApiPath;
 import com.winchesters.devopsify.dto.request.GenerateMavenProjectDto;
 import com.winchesters.devopsify.dto.request.ProjectDto;
 import com.winchesters.devopsify.dto.request.project.CreateNewProjectDto;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/project")
+@RequestMapping(path = ApiPath.BASE_PATH+ "/project")
 public class ProjectController {
     private final ProjectService projectService;
 

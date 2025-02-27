@@ -1,6 +1,7 @@
 package com.winchesters.devopsify.dto.request.project;
 
-import javax.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotNull;
 
 public record CreateNewProjectGeneralDto(
 

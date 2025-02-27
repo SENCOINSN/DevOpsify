@@ -2,7 +2,6 @@ package com.winchesters.devopsify.service.technologies;
 
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 

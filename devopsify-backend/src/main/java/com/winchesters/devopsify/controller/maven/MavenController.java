@@ -1,6 +1,7 @@
 package com.winchesters.devopsify.controller.maven;
 
 
+import com.winchesters.devopsify.constants.ApiPath;
 import com.winchesters.devopsify.dto.response.MavenArchetypeDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/maven")
+@RequestMapping(path = ApiPath.BASE_PATH+"/maven")
 public class MavenController {
 
     /**

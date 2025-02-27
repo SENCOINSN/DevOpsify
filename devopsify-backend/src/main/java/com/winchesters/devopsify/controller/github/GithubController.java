@@ -1,10 +1,12 @@
 package com.winchesters.devopsify.controller.github;
 
+import com.winchesters.devopsify.constants.ApiPath;
 import com.winchesters.devopsify.dto.request.GithubRepositoryDto;
 import com.winchesters.devopsify.model.GithubAnalyseResults;
 import com.winchesters.devopsify.model.GithubCredentials;
 import com.winchesters.devopsify.service.technologies.github.GithubRepositoryServiceImpl;
 import com.winchesters.devopsify.service.technologies.github.GithubServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.kohsuke.github.GHRepository;
 import org.slf4j.Logger;
@@ -12,12 +14,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
-@RequestMapping(path = "api/v1/github")
+@RequestMapping(path = ApiPath.BASE_PATH + "/github")
 @RequiredArgsConstructor
 public class GithubController {
     private static final Logger LOG = LoggerFactory.getLogger(GithubController.class);

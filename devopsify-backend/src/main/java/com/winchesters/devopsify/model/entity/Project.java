@@ -2,14 +2,13 @@ package com.winchesters.devopsify.model.entity;
 
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import com.winchesters.devopsify.model.AnalyseResults;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-
-import javax.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 
 @Entity
@@ -18,7 +17,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Setter
 @Getter
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+@Convert(attributeName = "jsonb", converter = JsonBinaryType.class)
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,15 +32,15 @@ public class Project {
     private Boolean hasJenkinsFile = false;
     private Boolean hasTests = false;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private AnalyseResults analyseResults;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private Server jenkinsServer;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private Server nexusServer;
 

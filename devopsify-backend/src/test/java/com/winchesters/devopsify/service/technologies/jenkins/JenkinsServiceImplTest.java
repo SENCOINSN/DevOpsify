@@ -1,6 +1,5 @@
 package com.winchesters.devopsify.service.technologies.jenkins;
 
-import com.cdancy.jenkins.rest.domain.job.JobInfo;
 import com.winchesters.devopsify.exception.jenkins.JenkinsServerException;
 import com.winchesters.devopsify.model.entity.Server;
 import org.junit.jupiter.api.*;

@@ -1,12 +1,12 @@
 package com.winchesters.devopsify.service.technologies.github.branch;
 
 import com.winchesters.devopsify.exception.github.GithubRepositoryBranchNotFoundException;
+import jakarta.validation.constraints.NotNull;
 import org.apache.commons.io.FilenameUtils;
 import org.kohsuke.github.GHBranch;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHTreeEntry;
 
-import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +17,7 @@ public class Branch {
     private String branchName = DEFAULT_BRANCH_NAME;
     private GHRepository repository;
 
-    public Branch( @NotNull  GHRepository repository) {
+    public Branch( @NotNull GHRepository repository) {
         this.repository = repository;
     }
 
